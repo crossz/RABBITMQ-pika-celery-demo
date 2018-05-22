@@ -6,7 +6,7 @@ connection = pika.BlockingConnection(parameters)
 channel = connection.channel()
 ## for default EXCHANGE, '', which is equivalent to 'amq.default'
 channel.queue_declare(queue='hello')
-## for customized EXCHANGE
+## for customized EXCHANGE, here for consumer, the customized exchange has to be bind to specific queue manually.
 # channel.exchange_declare(exchange='hello')
 # channel.queue_bind(exchange='hello', queue='hello')
 
